@@ -5,7 +5,9 @@ import { Download } from "lucide-react";
 
 export default function QRPage() {
   const targetUrl = useMemo(() => {
-    const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+    const base =
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      "https://redzlandingpage-mazen-khalils-projects.vercel.app";
     return `${base}/`;
   }, []);
 
