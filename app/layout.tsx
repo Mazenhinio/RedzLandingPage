@@ -1,3 +1,4 @@
+import React from "react";
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
@@ -15,6 +16,11 @@ export const metadata: Metadata = {
   description:
     "Redagents helps learners build career-ready skills through guided, flexible online learning. In partnership with Global Educ8tions.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  icons: {
+    icon: "/brand/redagents-glyph.svg",
+    shortcut: "/brand/redagents-glyph.svg",
+    apple: "/brand/redagents-glyph.svg",
+  },
   openGraph: {
     title: "Redagents — Building Careers with Smart Learning",
     description:

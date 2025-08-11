@@ -14,7 +14,7 @@ export default function Booking() {
       <div className="mt-6 rounded-xl border bg-white shadow-sm overflow-hidden">
         <iframe
           src={src}
-          style={{ width: "100%", height: "900px", border: "none", overflow: "hidden" }}
+          style={{ width: "100%", height: "900px", border: "none", overflow: "hidden", transform: "translateY(100px)" }}
           scrolling="no"
           id={iframeId}
           title="Redagents appointment scheduler"

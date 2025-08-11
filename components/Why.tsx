@@ -9,19 +9,23 @@ export default function Why() {
     { icon: Shield, title: "Supportive Community", desc: "Peer discussion, accountability, and resources to keep you progressing." },
   ];
   return (
-    <section id="why" className="mx-auto container-max px-6 py-16">
-      <div className="grid md:grid-cols-2 gap-6 items-end">
-        <div>
-          <h2 className="headline text-3xl md:text-4xl font-semibold">Why Redagents</h2>
-          <p className="mt-3 text-muted max-w-prose">We blend structured learning with human support so you can move from interest to industry‑ready skillsets.</p>
+    <div style={{ backgroundColor: '#FAFBFC', width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
+      <section id="why" className="py-32" style={{ backgroundColor: '#FAFBFC' }}>
+        <div className="mx-auto container-max px-6">
+        <div className="grid md:grid-cols-2 gap-6 items-end">
+          <div>
+            <h2 className="headline text-3xl md:text-4xl font-semibold">Why Redagents</h2>
+            <p className="mt-3 text-muted max-w-prose">We blend structured learning with human support so you can move from interest to industry‑ready skillsets.</p>
+          </div>
+        </div>
+        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {items.map((it, i) => (
+            <FeatureCard key={it.title} icon={it.icon} title={it.title} desc={it.desc} index={i} />
+          ))}
         </div>
       </div>
-      <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {items.map((it, i) => (
-          <FeatureCard key={it.title} icon={it.icon} title={it.title} desc={it.desc} index={i} />
-        ))}
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
