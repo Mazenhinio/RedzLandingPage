@@ -168,7 +168,7 @@ export default function ContactForm() {
               Book a call or send a message
             </h2>
             <p className="mt-3 max-w-2xl" style={{ color: tokens.textDim }}>
-              Have questions about fit, time, or cost? We'll give you a clear plan in 15 minutes.
+              Have questions about fit, time, or cost? We&apos;ll give you a clear plan in 15 minutes.
             </p>
             
             <form onSubmit={handleFormSubmit} className="mt-8 grid grid-cols-1 gap-4 rounded-2xl p-6 sm:grid-cols-2" style={{ background: tokens.card, border: `1px solid ${tokens.border}`, boxShadow: "0 8px 30px rgba(15,18,34,0.06)" }}>
@@ -332,7 +332,7 @@ export default function ContactForm() {
       <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
             
             <p className="mt-3 text-sm" style={{ color: tokens.textMuted }}>
-              If the calendar doesn't load, <a className="underline" href={src} target="_blank" rel="noreferrer">open it in a new tab</a>.
+              If the calendar doesn&apos;t load, <a className="underline" href={src} target="_blank" rel="noreferrer">open it in a new tab</a>.
       </p>
           </>
         )}
