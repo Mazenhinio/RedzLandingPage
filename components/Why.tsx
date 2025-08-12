@@ -8,8 +8,7 @@ export default function Why() {
     { icon: Clock, title: "Flexible hours & real support", desc: "Study online around your job with experienced tutor feedback." },
   ];
   return (
-    <div style={{ backgroundColor: '#FAFBFC', width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
-      <section id="why" className="py-32" style={{ backgroundColor: '#FAFBFC' }}>
+    <section id="why" className="py-32" style={{ backgroundColor: '#FAFBFC' }}>
         <div className="mx-auto container-max px-6">
         <div className="grid md:grid-cols-2 gap-6 items-end">
           <div>
@@ -87,7 +86,6 @@ export default function Why() {
         </div>
       </div>
       </section>
-    </div>
   );
 }
 
