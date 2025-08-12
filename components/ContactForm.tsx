@@ -158,8 +158,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div style={{ backgroundColor: '#FAFBFC', width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
-      <section id="booking" className="py-32" style={{ background: '#FAFBFC' }}>
+    <section id="booking" className="py-32" style={{ background: '#FAFBFC' }}>
         <Container>
                     <div className="space-y-12">
             {/* Booking Calendar */}
@@ -266,7 +265,6 @@ export default function ContactForm() {
           </div>
         </Container>
       </section>
-    </div>
   );
 }
 
