@@ -10,21 +10,35 @@ export default function Nav() {
     <header className="sticky top-0 z-50 bg-warm-cream/90 backdrop-blur border-b border-black/5">
       <nav className="mx-auto container-max w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16" aria-label="Main">
         <Link href="#" className="flex items-center gap-3 focus-visible:outline-none">
-          <Image src="/brand/redagents-logo-horizontal.svg" alt="Redagents" width={160} height={40} priority />
+          <Image src="/brand/redagents-logo.png" alt="Redagents" width={160} height={40} priority />
         </Link>
         <div className="hidden md:flex items-center gap-8 text-sm" role="navigation">
-          <a href="#overview" className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Overview</a>
-          <a href="#why" className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Why Redagents</a>
-          <a href="#programs" className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Programs</a>
-          <a href="#booking" className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Book</a>
-          <a href="#partner" className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Partnership</a>
-          <a href="#contact" className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Contact</a>
-        </div>
-        <div className="hidden md:block">
+          <a href="#why" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('why')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Overview</a>
+          <a href="#courses" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Courses</a>
+          <a href="#booking" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Book</a>
+          <a href="#partner" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('partner')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Partners</a>
           <a href="#contact" onClick={(e) => {
             e.preventDefault();
             document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-          }} className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 bg-soft-sage text-white shadow-md hover:bg-soft-sage/80 transition-colors group" style={{ fontFamily: 'Times New Roman, serif' }}>
+          }} className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Contact</a>
+        </div>
+        <div className="hidden md:block">
+          <a href="#booking" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 bg-white text-black shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 group" style={{ fontFamily: 'Times New Roman, serif' }}>
             Get Started 
             <span className="relative inline-flex w-4 justify-end">
               <ArrowRight size={16} className="transition-opacity duration-200 group-hover:opacity-0" />
@@ -48,20 +62,23 @@ export default function Nav() {
         <div className="md:hidden border-t bg-warm-cream">
           <div className="px-6 py-4 grid gap-3 text-sm">
             {[
-              ["Overview", "#overview"],
-              ["Why Redagents", "#why"],
-              ["Programs", "#programs"],
+              ["Overview", "#why"],
+              ["Courses", "#courses"],
               ["Book", "#booking"],
-              ["Partnership", "#partner"],
+              ["Partners", "#partner"],
               ["Contact", "#contact"],
             ].map(([label, href]) => (
-              <a key={href} href={href as string} className="py-2" onClick={() => setOpen(false)}>
+              <a key={href} href={href as string} className="py-2" onClick={(e) => {
+                e.preventDefault();
+                document.getElementById(href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                setOpen(false);
+              }}>
                 {label}
               </a>
             ))}
-            <a href="#contact" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 bg-soft-sage text-white shadow-md hover:bg-soft-sage/80 transition-colors group" style={{ fontFamily: 'Times New Roman, serif' }} onClick={(e) => {
+            <a href="#booking" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 bg-white text-black shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 group" style={{ fontFamily: 'Times New Roman, serif' }} onClick={(e) => {
               e.preventDefault();
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
               setOpen(false);
             }}>
               Get Started 

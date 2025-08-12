@@ -12,10 +12,22 @@ export default function Footer() {
           <a href="/qr" className="text-sm underline">Get QR code</a>
         </div>
         <div className="grid gap-1 text-sm">
-          <a href="#overview" className="hover:underline">Overview</a>
-          <a href="#why" className="hover:underline">Why Redagents</a>
-          <a href="#programs" className="hover:underline">Programs</a>
-          <a href="#contact" className="hover:underline">Contact</a>
+          <a href="#why" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('why')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="hover:underline">Overview</a>
+          <a href="#courses" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="hover:underline">Courses</a>
+          <a href="#booking" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="hover:underline">Book</a>
+          <a href="#contact" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="hover:underline">Contact</a>
         </div>
         <div>
           <p className="text-sm mb-0">Partner</p>
