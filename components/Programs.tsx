@@ -24,8 +24,7 @@ export default function Courses() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#FAFBFC', width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
-      <section id="courses" className="py-32" style={{ backgroundColor: '#FAFBFC' }}>
+    <section id="courses" className="py-32" style={{ backgroundColor: '#FAFBFC' }}>
         <div className="mx-auto container-max px-6">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -107,7 +106,6 @@ export default function Courses() {
       </div>
       </div>
       </section>
-    </div>
   );
 }
 
