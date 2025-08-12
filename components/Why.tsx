@@ -13,7 +13,7 @@ export default function Why() {
         <div className="grid md:grid-cols-2 gap-6 items-end">
           <div>
             <h2 className="headline text-4xl md:text-6xl font-semibold">Why Redagents</h2>
-            <p className="mt-3 text-muted max-w-prose">Pick a recognised online course, study around your job, and get one-to-one careers advice that turns learning into real progress at work. The cost of living keeps creeping up; we help you keep moving too.</p>
+            <p className="mt-3 text-muted max-w-prose">We help full-time workers turn study into higher earning power. Pair UK-recognised courses with straight, one-to-one careers advice so you can move from doing a job to progressing your career—without quitting. We believe in lifelong learning that actually pays off.</p>
           </div>
         </div>
         <div className="mt-13 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

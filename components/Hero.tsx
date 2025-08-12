@@ -1,5 +1,6 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -8,6 +9,29 @@ const fadeUp = {
 
 export default function Hero() {
   const prefersReduced = useReducedMotion();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isClient, setIsClient] = useState(false);
+  
+  const images = [
+    "/images/image.png",
+    "/images/image1.jpg", 
+    "/images/image2.jpg"
+  ];
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+    
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [isClient]);
+
   return (
     <section id="overview" className="relative overflow-hidden">
       <div className="mesh-bg absolute inset-0 -z-10" aria-hidden />
@@ -53,17 +77,32 @@ export default function Hero() {
             </motion.div>
           </div>
           
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="flex justify-center lg:justify-end"
-          >
-            <div className="w-96 h-72 bg-gray-200 rounded-2xl flex items-center justify-center">
-              <span className="text-gray-500 text-sm">Image placeholder</span>
-            </div>
-          </motion.div>
+                     <motion.div 
+             initial={{ opacity: 0, x: 20 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             viewport={{ once: true }}
+             transition={{ delay: 0.5, duration: 0.8 }}
+             className="flex justify-center lg:justify-end"
+           >
+             {isClient ? (
+               <motion.img 
+                 key={currentImageIndex}
+                 src={images[currentImageIndex]} 
+                 alt="Career development and learning" 
+                 className="max-w-full h-auto rounded-2xl shadow-lg"
+                 initial={{ opacity: 0, x: 20, filter: "blur(8px)" }}
+                 animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                 exit={{ opacity: 0, x: -20, filter: "blur(8px)" }}
+                 transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
+               />
+             ) : (
+               <img 
+                 src={images[0]} 
+                 alt="Career development and learning" 
+                 className="max-w-full h-auto rounded-2xl shadow-lg"
+               />
+             )}
+           </motion.div>
         </div>
       </div>
     </section>
