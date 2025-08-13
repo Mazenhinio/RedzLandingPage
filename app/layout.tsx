@@ -12,10 +12,12 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Build your career with UK-recognised courses | Redagents",
+  title: "Redagents - Build your career with UK-recognised courses",
   description:
-    "Pay-monthly online courses plus straight-talk careers advice. Study anytime. In collaboration with Global Educ8tions.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+    "Redagents connects you with UK-recognised online courses and 1-to-1 careers advice. Gain career-ready skills, flexible learning, and accredited certificates to help you progress from a job to a career.",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  ),
   icons: {
     icon: "/brand/redagents-glyph.svg",
     shortcut: "/brand/redagents-glyph.svg",
@@ -24,11 +26,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Build your career with UK-recognised courses | Redagents",
     description:
-      "Pay-monthly online courses plus straight-talk careers advice. Study anytime. In collaboration with Global Educ8tions.",
+      "Redagents connects you with UK-recognised online courses and 1-to-1 careers advice. Gain career-ready skills, flexible learning, and accredited certificates to help you progress from a job to a career.",
     url: "/",
     siteName: "Redagents",
     images: [
-      { url: "/brand/redagents-logo-horizontal.png", width: 1200, height: 630, alt: "Redagents" },
+      {
+        url: "/brand/redagents-logo-horizontal.png",
+        width: 1200,
+        height: 630,
+        alt: "Redagents",
+      },
     ],
     locale: "en_GB",
     type: "website",
@@ -37,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Build your career with UK-recognised courses | Redagents",
     description:
-      "Pay-monthly online courses plus straight-talk careers advice. Study anytime.",
+      "Redagents connects you with UK-recognised online courses and 1-to-1 careers advice. Gain career-ready skills, flexible learning, and accredited certificates to help you progress from a job to a career.",
     images: ["/brand/redagents-logo-horizontal.png"],
   },
 };
@@ -49,7 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable} antialiased`}> 
+      <body className={`${inter.variable} ${poppins.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -70,7 +70,14 @@ export default function Hero() {
                 href="#booking" 
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+                                     const element = document.getElementById('wOlyiO91MrkrgUgqc857_1754840296544');
+                   if (element) {
+                     const elementPosition = element.offsetTop - 170;
+                     window.scrollTo({
+                       top: elementPosition,
+                       behavior: 'smooth'
+                     });
+                   }
                 }}
                 className="inline-flex items-center justify-center rounded-full px-6 py-3 bg-brand text-white shadow-lg hover:bg-brandHover hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
