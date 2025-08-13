@@ -13,8 +13,10 @@ export default function Hero() {
   const [isClient, setIsClient] = useState(false);
   
   const images = [
+    "/images/image3.jpg",
+    "/images/image4.jpg",
     "/images/image.png",
-    "/images/image1.jpg", 
+    "/images/image1.jpg",
     "/images/image2.jpg"
   ];
 
@@ -27,7 +29,7 @@ export default function Hero() {
     
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
+    }, 5000); // Change image every 5 seconds
 
     return () => clearInterval(interval);
   }, [isClient]);
@@ -39,20 +41,20 @@ export default function Hero() {
       <div className="mx-auto container-max px-6 pt-20 pb-16 sm:pt-28 sm:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-                    <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="inline-flex items-center gap-2 text-sm font-medium text-partner" style={{ fontFamily: 'Times New Roman, serif' }}>
+                    <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="inline-flex items-center gap-2 text-sm font-medium text-partner">
           In collaboration with{" "}
           <a 
             href="https://globaleduc8tions.org/" 
             target="_blank" 
             rel="noreferrer noopener"
             className="underline decoration-dashed underline-offset-4 hover:text-brand transition-colors px-2 py-1 rounded-full"
-            style={{ fontFamily: 'Times New Roman, serif', backgroundColor: 'rgba(128, 128, 128, 0.1)' }}
+            style={{ backgroundColor: 'rgba(128, 128, 128, 0.1)' }}
           >
             Global Educ8tions
           </a>
         </motion.p>
-            <motion.h1 initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1} variants={fadeUp} className="headline mt-3 text-4xl md:text-6xl font-semibold max-w-3xl" style={{ fontFamily: 'Times New Roman, serif' }}>
-              Build your career with UK-recognised courses.
+            <motion.h1 initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1} variants={fadeUp} className="headline mt-3 text-4xl md:text-6xl font-semibold max-w-3xl">
+              Build your career with UK-recognised courses
             </motion.h1>
             <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2} variants={fadeUp} className="mt-6 max-w-2xl text-lg text-muted">
               Earn a recognised certificate and real 1-to-1 careers advice with tutor-supported online study.

@@ -13,7 +13,7 @@ export default function Why() {
         <div className="grid md:grid-cols-2 gap-6 items-end">
           <div>
             <h2 className="headline text-4xl md:text-6xl font-semibold">Why Redagents</h2>
-            <p className="mt-3 text-muted max-w-prose">We help full-time workers turn study into higher earning power. Pair UK-recognised courses with straight, one-to-one careers advice so you can move from doing a job to progressing your career—without quitting. We believe in lifelong learning that actually pays off.</p>
+            <p className="mt-3 text-muted max-w-prose">We help workers turn study into higher earning power. Connecting UK-recognised courses and one-to-one careers advice so you can move from doing a job to progressing in your career. We believe in lifelong learning that achieves your desired goals and aspirations.</p>
           </div>
         </div>
         <div className="mt-13 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -24,15 +24,15 @@ export default function Why() {
         
         {/* Who this is for */}
         <div className="mt-12 p-8 bg-white rounded-2xl border border-warm-nude/20">
-          <h3 className="text-3xl md:text-5xl font-semibold tracking-tight" style={{ fontFamily: 'Times New Roman, serif' }}>
-            Who this is for
-          </h3>
+                   <h3 className="text-3xl md:text-5xl font-semibold tracking-tight">
+           Who this is for
+         </h3>
           
           <div className="mt-6 space-y-4">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#C40F26' }}></div>
               <div>
-                <p className="text-sm font-medium">People already working full-time who want to move up without quitting</p>
+                <p className="text-sm font-medium">People already working full-time who want to a promotion</p>
               </div>
             </div>
             
@@ -46,20 +46,20 @@ export default function Why() {
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#C40F26' }}></div>
               <div>
-                <p className="text-sm font-medium">Learners who prefer online study without fixed lectures</p>
+                <p className="text-sm font-medium">Learners who prefer online study and learning at their own pace</p>
               </div>
             </div>
             
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#C40F26' }}></div>
               <div>
-                <p className="text-sm font-medium">People who want a recognised certificate they can show</p>
+                <p className="text-sm font-medium">People who want a UK accredited qualification they can show</p>
               </div>
             </div>
           </div>
 
           <div className="mt-8 pt-6 border-t border-neutral-200">
-            <h4 className="text-3xl md:text-5xl font-semibold tracking-tight mb-6" style={{ fontFamily: 'Times New Roman, serif' }}>What we do not promise</h4>
+            <h4 className="text-3xl md:text-5xl font-semibold tracking-tight mb-6">What we do not promise</h4>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
@@ -71,7 +71,7 @@ export default function Why() {
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
                 <div>
-                  <p className="text-sm font-medium">No one-size-fits-all courses. If it is not right for your role or sector, we will say so.</p>
+                  <p className="text-sm font-medium">No one-size-fits-all courses. If it is not right for your role or sector, we will let you know.</p>
                 </div>
               </div>
               

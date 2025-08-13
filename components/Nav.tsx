@@ -9,8 +9,9 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 bg-warm-cream/90 backdrop-blur border-b border-black/5">
       <nav className="mx-auto container-max w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16" aria-label="Main">
-        <Link href="#" className="flex items-center gap-3 focus-visible:outline-none">
-          <Image src="/brand/redagents-logo.png" alt="Redagents" width={160} height={40} priority />
+        <Link href="#" className="flex items-center gap-1 focus-visible:outline-none">
+          <Image src="/brand/redagents-glyph.png" alt="Redagents" width={32} height={32} priority />
+          <Image src="/brand/redagents-logo.png" alt="Redagents" width={10} height={32} priority />
         </Link>
         <div className="hidden md:flex items-center gap-8 text-sm" role="navigation">
           <a href="#why" onClick={(e) => {
@@ -38,7 +39,7 @@ export default function Nav() {
           <a href="#booking" onClick={(e) => {
             e.preventDefault();
             document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
-          }} className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 bg-white text-black shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 group" style={{ fontFamily: 'Times New Roman, serif' }}>
+          }} className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 bg-white text-black shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 group">
             Get Started 
             <span className="relative inline-flex w-4 justify-end">
               <ArrowRight size={16} className="transition-opacity duration-200 group-hover:opacity-0" />
@@ -76,7 +77,7 @@ export default function Nav() {
                 {label}
               </a>
             ))}
-            <a href="#booking" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 bg-white text-black shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 group" style={{ fontFamily: 'Times New Roman, serif' }} onClick={(e) => {
+            <a href="#booking" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 bg-white text-black shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 group" onClick={(e) => {
               e.preventDefault();
               document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
               setOpen(false);

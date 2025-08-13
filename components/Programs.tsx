@@ -104,6 +104,84 @@ export default function Courses() {
           );
         })}
       </div>
+
+      {/* More Courses Available */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.7 }}
+        className="mt-12 p-6 bg-white/50 rounded-2xl border border-warm-nude/30 shadow-sm"
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#C40F26' }}></div>
+          <p className="text-sm font-medium">
+            More courses are available - <a href="#contact-form" onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+            }} className="underline decoration-dashed underline-offset-2 hover:text-brand transition-colors">contact us</a> to learn more
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Course Information Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.8 }}
+        className="mt-16 p-8 bg-white rounded-2xl border border-warm-nude/20 shadow-sm"
+      >
+                 <h3 className="text-2xl md:text-4xl font-semibold headline mb-6">Course Information</h3>
+        
+        <div className="space-y-6">
+          <div>
+            <h4 className="text-xl md:text-3xl font-semibold mb-3">Assessment & Guidance</h4>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
+                <span>Every learner needs to have an initial assessment and advice and guidance session about their career pathway <span style={{ color: '#C40F26' }}>!!</span></span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
+                <span>Regular reviews whilst they are learning</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xl md:text-3xl font-semibold mb-3">Vocational Training</h4>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
+                <span>Our vocational courses are delivered to suit your everyday needs</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
+                <span>Job-focused training for specific roles or career pathways</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
+                <span>Lead to professional skills certificates or associate degrees</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xl md:text-3xl font-semibold mb-3">Free Consultation</h4>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
+                <span>We will contact you for a FREE online 1-2-1 advice and guidance</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
+                <span>Review your pathway options prior to accepting your learning application</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </motion.div>
       </div>
       </section>
   );
