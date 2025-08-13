@@ -7,6 +7,11 @@
   --bg: #FFFFFF;
   --muted: #6B7280;
   --partner: #21314C;
+  --warm-beige: #F8F6F2;
+  --warm-nude: #F0EBE3;
+  --warm-cream: #FEFDFA;
+  --soft-sage: #7A918D;
+  --soft-navy: #4A5568;
 }
 
 /* Tailwind theme variables */
@@ -17,6 +22,11 @@
   --color-muted: var(--muted);
   --color-brand: var(--brand-red);
   --color-partner: var(--partner);
+  --color-warm-beige: var(--warm-beige);
+  --color-warm-nude: var(--warm-nude);
+  --color-warm-cream: var(--warm-cream);
+  --color-soft-sage: var(--soft-sage);
+  --color-soft-navy: var(--soft-navy);
   --font-sans: var(--font-inter);
   --font-heading: var(--font-poppins);
 }
@@ -25,15 +35,15 @@
 html, body {
   background: var(--bg);
   color: var(--ink);
+  overflow-x: hidden;
 }
 
 /* Better focus visibility */
 :focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--brand-red), white 20%);
-  outline-offset: 2px;
+  outline: none;
 }
 
-.brand-gradient { background: linear-gradient(135deg,var(--brand-red), #ff4d5e 60%); }
+.brand-gradient { background: linear-gradient(135deg,var(--soft-sage), var(--soft-navy) 60%); }
 
 /* Hero mesh background */
 .mesh-bg {
@@ -41,7 +51,7 @@ html, body {
     radial-gradient(1200px 600px at 10% -20%, color-mix(in oklab, var(--brand-red), white 75%) 0%, transparent 60%),
     radial-gradient(900px 500px at 110% 10%, color-mix(in oklab, var(--brand-red), white 85%) 0%, transparent 60%),
     radial-gradient(800px 400px at 40% 120%, color-mix(in oklab, var(--brand-red), white 80%) 0%, transparent 70%),
-    linear-gradient(180deg, #fff, #fff);
+    linear-gradient(180deg, var(--warm-cream), var(--warm-beige));
 }
 
 /* Typography scaling */

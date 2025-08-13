@@ -1,3 +1,4 @@
+import React from "react";
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
@@ -11,14 +12,19 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Redagents — Building Careers with Smart Learning",
+  title: "Build your career with UK-recognised courses | Redagents",
   description:
-    "Redagents helps learners build career-ready skills through guided, flexible online learning. In partnership with Global Educ8tions.",
+    "Pay-monthly online courses plus straight-talk careers advice. Study anytime. In collaboration with Global Educ8tions.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  icons: {
+    icon: "/brand/redagents-glyph.svg",
+    shortcut: "/brand/redagents-glyph.svg",
+    apple: "/brand/redagents-glyph.svg",
+  },
   openGraph: {
-    title: "Redagents — Building Careers with Smart Learning",
+    title: "Build your career with UK-recognised courses | Redagents",
     description:
-      "Career-ready skills, expert mentors, and flexible online learning. In partnership with Global Educ8tions.",
+      "Pay-monthly online courses plus straight-talk careers advice. Study anytime. In collaboration with Global Educ8tions.",
     url: "/",
     siteName: "Redagents",
     images: [
@@ -29,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Redagents — Building Careers with Smart Learning",
+    title: "Build your career with UK-recognised courses | Redagents",
     description:
-      "Career-ready skills, expert mentors, and flexible online learning.",
+      "Pay-monthly online courses plus straight-talk careers advice. Study anytime.",
     images: ["/brand/redagents-logo-horizontal.png"],
   },
 };

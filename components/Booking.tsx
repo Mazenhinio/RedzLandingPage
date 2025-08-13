@@ -7,14 +7,14 @@ export default function Booking() {
   // Some GHL accounts require the widgets domain instead of api.*; using the public widget host below.
   const src = "https://link.msgsndr.com/widget/booking/wOlyiO91MrkrgUgqc857";
   return (
-    <section id="booking" className="mx-auto container-max px-6 py-16">
+    <section id="booking" className="mx-auto container-max px-6 py-6">
       <h2 className="headline text-3xl md:text-4xl font-semibold">Book an appointment</h2>
-      <p className="mt-2 text-muted max-w-prose">Choose a time that works for you. The calendar is loaded from our scheduling provider.</p>
+      <p className="mt-2 text-muted max-w-prose">Choose a time that works for you. </p>
 
       <div className="mt-6 rounded-xl border bg-white shadow-sm overflow-hidden">
         <iframe
           src={src}
-          style={{ width: "100%", height: "900px", border: "none", overflow: "hidden" }}
+          style={{ width: "100%", height: "900px", border: "none", overflow: "hidden", transform: "translateY(100px)" }}
           scrolling="no"
           id={iframeId}
           title="Redagents appointment scheduler"

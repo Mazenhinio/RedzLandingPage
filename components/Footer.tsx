@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
+import PartnerRibbon from "./PartnerRibbon";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 border-t">
+    <footer className="border-t bg-white">
       <div className="mx-auto container-max px-6 py-10 grid gap-6 md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr]">
         <div className="grid gap-3">
           <Image src="/brand/redagents-glyph.svg" alt="Redagents glyph" width={48} height={48} />
@@ -11,22 +12,33 @@ export default function Footer() {
           <a href="/qr" className="text-sm underline">Get QR code</a>
         </div>
         <div className="grid gap-1 text-sm">
-          <a href="#overview" className="hover:underline">Overview</a>
-          <a href="#why" className="hover:underline">Why Redagents</a>
-          <a href="#programs" className="hover:underline">Programs</a>
-          <a href="#contact" className="hover:underline">Contact</a>
+          <a href="#why" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('why')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="hover:underline">Overview</a>
+          <a href="#courses" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="hover:underline">Courses</a>
+          <a href="#booking" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="hover:underline">Book</a>
+          <a href="#contact" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="hover:underline">Contact</a>
         </div>
-        <div className="grid gap-2">
-          <p className="text-sm">Partner</p>
-          <a className="inline-flex items-center gap-2 text-partner underline" href="https://globaleduc8tions.org/" target="_blank" rel="noreferrer">
+        <div>
+          <p className="text-sm mb-0">Partner</p>
+          <a className="inline-flex items-center gap-2 text-partner underline bg-white px-2 py-1 rounded" href="https://globaleduc8tions.org/" target="_blank" rel="noreferrer noopener">
             Global Educ8tions <ExternalLink size={14} />
           </a>
-          <div className="mt-2">
-            <iframe title="QR" aria-label="QR code" className="w-24 h-24 border rounded bg-white" src={`/qr?embed=1`} />
-          </div>
+
         </div>
       </div>
       <div className="py-4 text-center text-xs text-muted border-t">© {new Date().getFullYear()} Redagents. All rights reserved.</div>
+      <PartnerRibbon />
     </footer>
   );
 }

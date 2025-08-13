@@ -1,24 +1,21 @@
 "use client";
+import React from "react";
 import Nav from "./Nav";
 import Hero from "./Hero";
 import Why from "./Why";
-import Programs from "./Programs";
-import PartnerRibbon from "./PartnerRibbon";
-import CtaBand from "./CtaBand";
+import Courses from "./Programs";
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
-import Booking from "./Booking";
+import EventBanner from "./EventBanner";
 
 export default function LandingPage() {
   return (
     <div className="min-h-svh">
+      <EventBanner />
       <Nav />
       <Hero />
       <Why />
-      <Programs />
-      <PartnerRibbon />
-      <Booking />
-      <CtaBand />
+      <Courses />
       <ContactForm />
       <Footer />
     </div>
