@@ -38,6 +38,11 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Add padding for fixed navbar */
+body {
+  padding-top: 64px; /* 16 * 4 = 64px to match navbar height */
+}
+
 /* Better focus visibility */
 :focus-visible {
   outline: none;

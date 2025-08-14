@@ -8,6 +8,7 @@ import ContactForm from "./ContactForm";
 import Footer from "./Footer";
 import EventBanner from "./EventBanner";
 import ImagePreloader from "./ImagePreloader";
+import BackToTop from "./BackToTop";
 
 export default function LandingPage() {
   // Hero images to preload
@@ -30,6 +31,7 @@ export default function LandingPage() {
         }}
       />
       
+
       <EventBanner />
       <Nav />
       <Hero />
@@ -37,6 +39,7 @@ export default function LandingPage() {
       <Courses />
       <ContactForm />
       <Footer />
+      <BackToTop />
     </div>
   );
 }

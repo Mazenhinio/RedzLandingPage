@@ -1,6 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
+
 import { ExternalLink } from "lucide-react";
+import AnimatedSection, { StaggeredContainer } from "./AnimatedSection";
 
 export default function Courses() {
   const handleRequestCourse = (trackTitle: string) => {
@@ -26,55 +27,29 @@ export default function Courses() {
   return (
     <section id="courses" className="py-32" style={{ backgroundColor: '#FAFBFC' }}>
         <div className="mx-auto container-max px-6">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="headline text-4xl md:text-6xl font-semibold"
-        >
-          Courses
-        </motion.h2>
+        <AnimatedSection delay={0}>
+          <h2 className="headline text-4xl md:text-6xl font-semibold">
+            Courses
+          </h2>
+        </AnimatedSection>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className="mt-3 max-w-2xl text-muted"
-      >
-      </motion.p>
+        <AnimatedSection delay={0.1}>
+          <p className="mt-3 max-w-2xl text-muted">
+          </p>
+        </AnimatedSection>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-        className="mt-3 max-w-3xl text-sm text-muted"
-      >
-        Courses are delivered via trusted UK providers. We&apos;ll confirm the awarding body during your consult.
-      </motion.p>
+        <AnimatedSection delay={0.2}>
+          <p className="mt-3 max-w-3xl text-sm text-muted">
+            Courses are delivered via trusted UK providers. We&apos;ll confirm the awarding body during your consult.
+          </p>
+        </AnimatedSection>
 
-      <div className="mt-13 grid grid-cols-1 gap-8 md:grid-cols-2">
-        {tracks.map((t, i) => {
-          // Equal time gaps between all boxes
-          const delay = i * 0.3; // 0.3s delay between each box
-          
-          return (
-            <motion.article
-              key={t.title}
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ 
-                delay: delay,
-                duration: 0.8,
-                type: "spring",
-                stiffness: 80,
-                damping: 15,
-                bounce: 0.1
-              }}
-              className="flex h-full flex-col justify-between rounded-2xl p-6 border border-warm-nude/20 bg-white shadow-sm hover:shadow-md transition-shadow"
-            >
+      <StaggeredContainer className="mt-13 grid grid-cols-1 gap-8 md:grid-cols-2" staggerDelay={0.2}>
+        {tracks.map((t) => (
+          <article
+            key={t.title}
+            className="flex h-full flex-col justify-between rounded-2xl p-6 border border-warm-nude/20 bg-white shadow-sm hover:shadow-md transition-shadow"
+          >
             <div>
               <h3 className="text-lg font-semibold headline">{t.title}</h3>
               <p className="mt-2 text-sm text-muted">{t.desc}</p>
@@ -100,19 +75,13 @@ export default function Courses() {
                 Request course details <ExternalLink className="h-4 w-4" />
               </button>
             </div>
-          </motion.article>
-          );
-        })}
-      </div>
+          </article>
+        ))}
+      </StaggeredContainer>
 
       {/* More Courses Available */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.7 }}
-        className="mt-12 p-6 bg-white/50 rounded-2xl border border-warm-nude/30 shadow-sm"
-      >
+      <AnimatedSection delay={0.3}>
+        <div className="mt-12 p-6 bg-white/50 rounded-2xl border border-warm-nude/30 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#C40F26' }}></div>
           <p className="text-sm font-medium">
@@ -122,16 +91,12 @@ export default function Courses() {
             }} className="underline decoration-dashed underline-offset-2 hover:text-brand transition-colors">Contact Us</a> to learn more
           </p>
         </div>
-      </motion.div>
+        </div>
+      </AnimatedSection>
 
       {/* Course Information Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.8 }}
-        className="mt-16 p-8 bg-white rounded-2xl border border-warm-nude/20 shadow-sm"
-      >
+      <AnimatedSection delay={0.3}>
+        <div className="mt-16 p-8 bg-white rounded-2xl border border-warm-nude/20 shadow-sm">
                  <h3 className="text-2xl md:text-4xl font-semibold headline mb-6">Course Information</h3>
         
         <div className="space-y-6">
@@ -140,7 +105,7 @@ export default function Courses() {
             <ul className="space-y-2">
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
-                <span>Every learner needs to have an initial assessment and advice and guidance session about their career pathway <span style={{ color: '#C40F26' }}>!!</span></span>
+                <span>Every learner needs to have an initial assessment and advice and guidance session about their career pathway <span style={{ color: '#C40F26' }}>!</span></span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
@@ -193,7 +158,8 @@ export default function Courses() {
             </ul>
           </div>
         </div>
-      </motion.div>
+        </div>
+      </AnimatedSection>
       </div>
       </section>
   );

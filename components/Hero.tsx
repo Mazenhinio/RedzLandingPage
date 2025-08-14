@@ -1,5 +1,5 @@
 "use client";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const fadeUp = {
@@ -8,12 +8,9 @@ const fadeUp = {
 };
 
 export default function Hero() {
-  const prefersReduced = useReducedMotion();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isClient, setIsClient] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
-  const [imageCache, setImageCache] = useState<Map<string, HTMLImageElement>>(new Map());
   
   const images = [
     "/images/image3.jpg",
@@ -29,12 +26,9 @@ export default function Hero() {
     
     const preloadAndCacheImages = async () => {
       const imagePromises = images.map((src) => {
-        return new Promise<void>((resolve, reject) => {
+        return new Promise<void>((resolve) => {
           const img = new Image();
           img.onload = () => {
-            // Cache the loaded image element
-            setImageCache(prev => new Map(prev.set(src, img)));
-            setLoadedImages(prev => new Set([...prev, src]));
             resolve();
           };
           img.onerror = () => {

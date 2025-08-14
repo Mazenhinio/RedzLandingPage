@@ -153,6 +153,7 @@ export default function ContactForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [showForm, setShowForm] = useState(true);
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -183,6 +184,8 @@ export default function ContactForm() {
           message: ""
         });
         setSelectedTrack("");
+        // Close form immediately
+        setShowForm(false);
       } else {
         setSubmitStatus('error');
       }
@@ -234,7 +237,8 @@ export default function ContactForm() {
                 Have questions about fit, time, or cost? Shoot us an email and we will get back to you as soon as possible.
               </p>
               
-              <form onSubmit={handleFormSubmit} className="mt-8 grid grid-cols-1 gap-4 rounded-2xl p-6 sm:grid-cols-2" style={{ background: tokens.card, border: `1px solid ${tokens.border}`, boxShadow: "0 8px 30px rgba(15,18,34,0.06)" }}>
+              {showForm ? (
+                <form onSubmit={handleFormSubmit} className="mt-8 grid grid-cols-1 gap-4 rounded-2xl p-6 sm:grid-cols-2" style={{ background: tokens.card, border: `1px solid ${tokens.border}`, boxShadow: "0 8px 30px rgba(15,18,34,0.06)" }}>
                 <Field 
                   label="Name" 
                   id="name" 
@@ -298,11 +302,7 @@ export default function ContactForm() {
                     {isSubmitting ? 'Sending...' : 'Send message'}
                   </button>
                   
-                  {submitStatus === 'success' && (
-                    <div className="mt-4 p-4 rounded-xl text-green-700 bg-green-50 border border-green-200">
-                      Thank you! Your message has been sent successfully.
-                    </div>
-                  )}
+
                   
                   {submitStatus === 'error' && (
                     <div className="mt-4 p-4 rounded-xl text-red-700 bg-red-50 border border-red-200">
@@ -311,6 +311,29 @@ export default function ContactForm() {
                   )}
                 </div>
               </form>
+              ) : (
+                <div className="mt-8 p-8 rounded-2xl text-center" style={{ background: tokens.card, border: `1px solid ${tokens.border}`, boxShadow: "0 8px 30px rgba(15,18,34,0.06)" }}>
+                  <div className="text-green-600 text-2xl mb-4">✓</div>
+                  <h3 className="text-xl font-semibold mb-2" style={{ color: tokens.textStrong }}>
+                    Message Sent Successfully!
+                  </h3>
+                  <p className="mb-6" style={{ color: tokens.textDim }}>
+                    Thank you for your message. We&apos;ll get back to you soon.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setShowForm(true);
+                      setSubmitStatus('idle');
+                    }}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-white"
+                    style={{ backgroundColor: tokens.brand }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = tokens.brandHover}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = tokens.brand}
+                  >
+                    Send Another Message
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </Container>
