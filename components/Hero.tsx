@@ -13,6 +13,7 @@ export default function Hero() {
   const [isClient, setIsClient] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+  const [imageCache, setImageCache] = useState<Map<string, HTMLImageElement>>(new Map());
   
   const images = [
     "/images/image3.jpg",
@@ -22,15 +23,17 @@ export default function Hero() {
     "/images/image2.jpg"
   ];
 
-  // Preload all images
+  // Preload and cache all images on initial load
   useEffect(() => {
     setIsClient(true);
     
-    const preloadImages = async () => {
+    const preloadAndCacheImages = async () => {
       const imagePromises = images.map((src) => {
         return new Promise<void>((resolve, reject) => {
           const img = new Image();
           img.onload = () => {
+            // Cache the loaded image element
+            setImageCache(prev => new Map(prev.set(src, img)));
             setLoadedImages(prev => new Set([...prev, src]));
             resolve();
           };
@@ -45,13 +48,14 @@ export default function Hero() {
       try {
         await Promise.all(imagePromises);
         setImagesLoaded(true);
+        console.log('All images preloaded and cached successfully');
       } catch (error) {
         console.error('Error preloading images:', error);
         setImagesLoaded(true); // Continue anyway
       }
     };
 
-    preloadImages();
+    preloadAndCacheImages();
   }, []);
 
   useEffect(() => {
@@ -123,31 +127,29 @@ export default function Hero() {
              transition={{ delay: 0.5, duration: 0.8 }}
              className="flex justify-center lg:justify-end"
            >
-             {!isClient || !imagesLoaded ? (
-               // Loading state
-               <div className="max-w-full h-64 bg-gray-200 rounded-2xl shadow-lg animate-pulse flex items-center justify-center">
-                 <div className="text-gray-500">Loading...</div>
-               </div>
-             ) : (
-               // Show image only when loaded
-               <motion.img 
-                 key={currentImageIndex}
-                 src={images[currentImageIndex]} 
-                 alt="Career development and learning" 
-                 className="max-w-full h-auto rounded-2xl shadow-lg"
-                 initial={{ opacity: 0, x: 20, filter: "blur(8px)" }}
-                 animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                 exit={{ opacity: 0, x: -20, filter: "blur(8px)" }}
-                 transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
-                 onLoad={(e) => {
-                   // Ensure the image is fully loaded before displaying
-                   const img = e.target as HTMLImageElement;
-                   if (img.complete && img.naturalHeight !== 0) {
-                     // Image is fully loaded
-                   }
-                 }}
-               />
-             )}
+                           {!isClient || !imagesLoaded ? (
+                // Loading state
+                <div className="max-w-full h-64 bg-gray-200 rounded-2xl shadow-lg animate-pulse flex items-center justify-center">
+                  <div className="text-gray-500">Loading images...</div>
+                </div>
+              ) : (
+                // Show cached image for instant playback
+                <motion.img 
+                  key={currentImageIndex}
+                  src={images[currentImageIndex]} 
+                  alt="Career development and learning" 
+                  className="max-w-full h-auto rounded-2xl shadow-lg"
+                  initial={{ opacity: 0, x: 20, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, x: -20, filter: "blur(8px)" }}
+                  transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
+                  style={{
+                    // Ensure smooth rendering of cached images
+                    imageRendering: 'auto',
+                    willChange: 'opacity, transform, filter'
+                  }}
+                />
+              )}
            </motion.div>
         </div>
       </div>
