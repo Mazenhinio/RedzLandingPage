@@ -151,10 +151,47 @@ export default function ContactForm() {
     };
   }, []);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          track: selectedTrack,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          country: "",
+          message: ""
+        });
+        setSelectedTrack("");
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -252,13 +289,26 @@ export default function ContactForm() {
                 <div className="sm:col-span-2">
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-3 text-lg font-normal text-white"
+                    disabled={isSubmitting}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-3 text-lg font-normal text-white disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ backgroundColor: "#000000", boxShadow: "0 12px 40px rgba(0,0,0,0.18)" }}
-                    onMouseEnter={(e) => ((e.currentTarget.style.backgroundColor = "#333333"))}
-                    onMouseLeave={(e) => ((e.currentTarget.style.backgroundColor = "#000000"))}
+                    onMouseEnter={(e) => (!isSubmitting && (e.currentTarget.style.backgroundColor = "#333333"))}
+                    onMouseLeave={(e) => (!isSubmitting && (e.currentTarget.style.backgroundColor = "#000000"))}
                   >
-                    Send message
+                    {isSubmitting ? 'Sending...' : 'Send message'}
                   </button>
+                  
+                  {submitStatus === 'success' && (
+                    <div className="mt-4 p-4 rounded-xl text-green-700 bg-green-50 border border-green-200">
+                      Thank you! Your message has been sent successfully.
+                    </div>
+                  )}
+                  
+                  {submitStatus === 'error' && (
+                    <div className="mt-4 p-4 rounded-xl text-red-700 bg-red-50 border border-red-200">
+                      Sorry, there was an error sending your message. Please try again.
+                    </div>
+                  )}
                 </div>
               </form>
             </div>

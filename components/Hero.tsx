@@ -44,7 +44,7 @@ export default function Hero() {
                     <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="inline-flex items-center gap-2 text-sm font-medium text-partner">
           In collaboration with{" "}
           <a 
-            href="https://globaleduc8tions.org/" 
+            href="https://www.ge8uk.com/" 
             target="_blank" 
             rel="noreferrer noopener"
             className="underline decoration-dashed underline-offset-4 hover:text-brand transition-colors px-2 py-1 rounded-full"

@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
         <div>
           <p className="text-sm mb-0">Partner</p>
-          <a className="inline-flex items-center gap-2 text-partner underline bg-white px-2 py-1 rounded" href="https://globaleduc8tions.org/" target="_blank" rel="noreferrer noopener">
+          <a className="inline-flex items-center gap-2 text-partner underline bg-white px-2 py-1 rounded" href="https://www.ge8uk.com/" target="_blank" rel="noreferrer noopener">
             Global Educ8tions <ExternalLink size={14} />
           </a>
 
