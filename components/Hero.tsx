@@ -11,6 +11,8 @@ export default function Hero() {
   const prefersReduced = useReducedMotion();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isClient, setIsClient] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
   
   const images = [
     "/images/image3.jpg",
@@ -20,19 +22,47 @@ export default function Hero() {
     "/images/image2.jpg"
   ];
 
+  // Preload all images
   useEffect(() => {
     setIsClient(true);
+    
+    const preloadImages = async () => {
+      const imagePromises = images.map((src) => {
+        return new Promise<void>((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => {
+            setLoadedImages(prev => new Set([...prev, src]));
+            resolve();
+          };
+          img.onerror = () => {
+            console.warn(`Failed to load image: ${src}`);
+            resolve(); // Continue even if one image fails
+          };
+          img.src = src;
+        });
+      });
+
+      try {
+        await Promise.all(imagePromises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error('Error preloading images:', error);
+        setImagesLoaded(true); // Continue anyway
+      }
+    };
+
+    preloadImages();
   }, []);
 
   useEffect(() => {
-    if (!isClient) return;
+    if (!isClient || !imagesLoaded) return;
     
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
     }, 5000); // Change image every 5 seconds
 
     return () => clearInterval(interval);
-  }, [isClient]);
+  }, [isClient, imagesLoaded]);
 
   return (
     <section id="overview" className="relative overflow-hidden">
@@ -93,7 +123,13 @@ export default function Hero() {
              transition={{ delay: 0.5, duration: 0.8 }}
              className="flex justify-center lg:justify-end"
            >
-             {isClient ? (
+             {!isClient || !imagesLoaded ? (
+               // Loading state
+               <div className="max-w-full h-64 bg-gray-200 rounded-2xl shadow-lg animate-pulse flex items-center justify-center">
+                 <div className="text-gray-500">Loading...</div>
+               </div>
+             ) : (
+               // Show image only when loaded
                <motion.img 
                  key={currentImageIndex}
                  src={images[currentImageIndex]} 
@@ -103,12 +139,13 @@ export default function Hero() {
                  animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                  exit={{ opacity: 0, x: -20, filter: "blur(8px)" }}
                  transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
-               />
-             ) : (
-               <img 
-                 src={images[0]} 
-                 alt="Career development and learning" 
-                 className="max-w-full h-auto rounded-2xl shadow-lg"
+                 onLoad={(e) => {
+                   // Ensure the image is fully loaded before displaying
+                   const img = e.target as HTMLImageElement;
+                   if (img.complete && img.naturalHeight !== 0) {
+                     // Image is fully loaded
+                   }
+                 }}
                />
              )}
            </motion.div>
