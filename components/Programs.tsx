@@ -119,7 +119,7 @@ export default function Courses() {
             More courses are available - <a href="#contact-form" onClick={(e) => {
               e.preventDefault();
               document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
-            }} className="underline decoration-dashed underline-offset-2 hover:text-brand transition-colors">contact us</a> to learn more
+            }} className="underline decoration-dashed underline-offset-2 hover:text-brand transition-colors">Contact Us</a> to learn more
           </p>
         </div>
       </motion.div>
@@ -150,7 +150,7 @@ export default function Courses() {
           </div>
 
           <div>
-            <h4 className="text-xl md:text-3xl font-semibold mb-3">Vocational Training</h4>
+            <h4 className="text-xl md:text-3xl font-semibold mb-3">Vocational Courses</h4>
             <ul className="space-y-2">
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
@@ -163,6 +163,18 @@ export default function Courses() {
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
                 <span>Lead to professional skills certificates or associate degrees</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
+                <span>Practical, hands-on learning with real-world applications</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
+                <span>Direct route to employment with pathways to apprenticeships</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
+                <span>Alternative to traditional academic routes, focusing on specific professions</span>
               </li>
             </ul>
           </div>
