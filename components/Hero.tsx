@@ -50,7 +50,7 @@ export default function Hero() {
     };
 
     preloadAndCacheImages();
-  }, []);
+  }, [images]);
 
   useEffect(() => {
     if (!isClient || !imagesLoaded) return;
@@ -60,7 +60,7 @@ export default function Hero() {
     }, 5000); // Change image every 5 seconds
 
     return () => clearInterval(interval);
-  }, [isClient, imagesLoaded]);
+  }, [isClient, imagesLoaded, images.length]);
 
   return (
     <section id="overview" className="relative overflow-hidden">

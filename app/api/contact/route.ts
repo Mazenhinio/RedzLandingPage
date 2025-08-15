@@ -30,7 +30,7 @@ export async function POST(request: Request) {
       firstName: name.split(' ')[0] || name,
       lastName: name.split(' ').slice(1).join(' ') || '',
       phone: '',
-      tags: ['Website Lead', 'Contact Form', track],
+      tags: ['Website Lead', 'Contact Form', track, 'start cold email'],
       source: 'Website',
       customField: {
         course_of_interest: track,
