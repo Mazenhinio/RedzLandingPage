@@ -82,12 +82,16 @@ export function StaggeredContainer({
   const itemVariants = {
     hidden: direction === "up" ? { y: 30, opacity: 0 } : 
            direction === "down" ? { y: -30, opacity: 0 } :
-           direction === "left" ? { x: 30, opacity: 0 } :
+           direction === "left" ? { x: -100, opacity: 0 } :
            { x: -30, opacity: 0 },
     visible: {
       y: 0,
       x: 0,
-      opacity: 1
+      opacity: 1,
+      transition: {
+        duration: direction === "left" ? 0.8 : 0.6,
+        ease: "easeOut"
+      }
     }
   };
 
