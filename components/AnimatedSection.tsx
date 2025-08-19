@@ -45,8 +45,7 @@ export default function AnimatedSection({
       viewport={{ once: true, margin: "-100px" }}
       transition={{
         duration: duration,
-        delay: delay,
-        ease: "easeOut"
+        delay: delay
       }}
     >
       {children}
@@ -89,8 +88,7 @@ export function StaggeredContainer({
       x: 0,
       opacity: 1,
       transition: {
-        duration: direction === "left" ? 0.8 : 0.6,
-        ease: "easeOut"
+        duration: direction === "left" ? 0.8 : 0.6
       }
     }
   };

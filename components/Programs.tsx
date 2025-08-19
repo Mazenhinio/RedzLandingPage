@@ -2,6 +2,7 @@
 
 import { ExternalLink } from "lucide-react";
 import AnimatedSection, { StaggeredContainer } from "./AnimatedSection";
+import CourseEnrollmentSteps from "./CourseEnrollmentSteps";
 
 export default function Courses() {
   const handleRequestCourse = (trackTitle: string) => {
@@ -93,6 +94,9 @@ export default function Courses() {
         </div>
         </div>
       </AnimatedSection>
+
+      {/* Course Enrollment Steps */}
+      <CourseEnrollmentSteps />
 
       {/* Course Information Section */}
       <AnimatedSection delay={0.3}>
