@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
-import { ArrowLeft, MapPin, Clock, Building, DollarSign, ExternalLink, ChevronDown } from 'lucide-react';
+import { ArrowLeft, MapPin, Clock, DollarSign, ExternalLink, ChevronDown } from 'lucide-react';
 import { Roboto } from 'next/font/google';
 
 const roboto = Roboto({
@@ -43,7 +43,7 @@ export default function WorkWithUsPage() {
 
             <h1 className="text-4xl mt-6 md:text-6xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'var(--font-roboto)' }}>Be part of our mission</h1>
             <p className=" -mt-2 mb-6 px-2 text-l text-gray-700 max-w-4xl leading-relaxed" style={{ fontFamily: 'var(--font-roboto)' }}>
-              We're looking for passionate people to join us on our mission. We value
+              We&apos;re looking for passionate people to join us on our mission. We value
               flat hierarchies, clear communication, and full ownership and responsibility.
             </p>
           </div>
@@ -61,7 +61,7 @@ export default function WorkWithUsPage() {
                   Business Development Representative (Entry Level)
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  We're looking for ambitious individuals to join our team and help people reimagine their careers.
+                  We&apos;re looking for ambitious individuals to join our team and help people reimagine their careers.
                 </p>
 
                 <div className="flex flex-wrap gap-4 mb-4">
@@ -127,8 +127,8 @@ export default function WorkWithUsPage() {
                   <h4 className="text-lg font-semibold text-gray-900 mb-3">Summary</h4>
                   <p className="text-gray-700 leading-relaxed">
                     Join our mission to transform careers through education. As a Business Development Representative, 
-                    you'll connect with individuals seeking professional growth and guide them toward life-changing 
-                    learning opportunities. Through strategic outreach and relationship building, you'll help people 
+                    you&apos;ll connect with individuals seeking professional growth and guide them toward life-changing 
+                    learning opportunities. Through strategic outreach and relationship building, you&apos;ll help people 
                     discover relevant CPD and vocational training programs that align with their career aspirations, 
                     while developing valuable skills in sales, marketing, and business development.
                   </p>
@@ -167,7 +167,7 @@ export default function WorkWithUsPage() {
 
                 {/* What You'll Gain */}
                 <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">What You'll Gain</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">What You&apos;ll Gain</h4>
                   <ul className="space-y-2 text-gray-800 ml-4">
                     <li className="flex items-start gap-2">
                       <span className="text-brand font-bold">•</span>
@@ -261,10 +261,10 @@ export default function WorkWithUsPage() {
           {/* More Jobs Coming Soon */}
           <div className="text-center py-12 bg-gray-50 rounded-lg border border-gray-200 shadow-lg">
             <h3 className="text-2xl font-medium text-gray-900 mb-4">More Opportunities Coming Soon</h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We're constantly growing and looking for talented individuals to join our team.
-              Check back regularly for new openings.
-            </p>
+                          <p className="text-gray-600 max-w-2xl mx-auto">
+                We&apos;re constantly growing and looking for talented individuals to join our team.
+                Check back regularly for new openings.
+              </p>
           </div>
         </div>
       </div>
