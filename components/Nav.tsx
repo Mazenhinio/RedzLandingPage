@@ -21,7 +21,6 @@ export default function Nav() {
         { id: 'why', offset: document.getElementById('why')?.offsetTop || 0 },
         { id: 'courses', offset: document.getElementById('courses')?.offsetTop || 0 },
         { id: 'booking', offset: document.getElementById('booking')?.offsetTop || 0 },
-        { id: 'partner', offset: document.getElementById('partner')?.offsetTop || 0 },
         { id: 'contact-form', offset: document.getElementById('contact-form')?.offsetTop || 0 }
       ];
 
@@ -81,12 +80,7 @@ export default function Nav() {
           }} className={`relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:transition-all after:duration-500 hover:after:w-full ${
             activeSection === 'contact-form' ? 'after:w-full after:bg-brand font-medium' : 'after:w-0 after:bg-black'
           }`}>Contact</a>
-          <a href="#partner" onClick={(e) => {
-            e.preventDefault();
-            document.getElementById('partner')?.scrollIntoView({ behavior: 'smooth' });
-          }} className={`relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:transition-all after:duration-500 hover:after:w-full ${
-            activeSection === 'partner' ? 'after:w-full after:bg-brand font-medium' : 'after:w-0 after:bg-black'
-          }`}>Partners</a>
+          <Link href="/work-with-us" className="relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:transition-all after:duration-500 hover:after:w-full after:w-0 after:bg-black hover:after:w-full">Work with Us</Link>
         </div>
                 <div className="hidden md:block">
           <a href="#booking" onClick={(e) => {
@@ -129,7 +123,6 @@ export default function Nav() {
               ["Courses", "#courses"],
               ["Book", "#booking"],
               ["Contact", "#contact-form"],
-              ["Partners", "#partner"],
             ].map(([label, href]) => (
               <a key={href} href={href as string} className="py-2" onClick={(e) => {
                 e.preventDefault();
@@ -150,6 +143,9 @@ export default function Nav() {
                 {label}
               </a>
             ))}
+            <Link href="/work-with-us" className="py-2" onClick={() => setOpen(false)}>
+              Work with Us
+            </Link>
                          <a href="#booking" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 bg-white text-black shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group" onClick={(e) => {
                e.preventDefault();
                const element = document.getElementById('wOlyiO91MrkrgUgqc857_1754840296544');

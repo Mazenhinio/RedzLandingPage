@@ -153,7 +153,7 @@ export default function Courses() {
             <ul className="space-y-2">
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
-                <span>We will contact you for a FREE online 1-2-1 advice and guidance</span>
+                <span>We will contact you for a FREE online 1-to-1 advice and guidance</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#000000' }}></div>
