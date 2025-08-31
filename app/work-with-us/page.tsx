@@ -38,7 +38,7 @@ export default function WorkWithUsPage() {
           <div className="pb-4">
             {/* We're hiring badge */}
             <div className="flex items-center mt-6 gap-2 bg-white text-black border-2 border-black px-6 py-3 rounded-full text-base font-medium mb-3 w-fit">
-              We're hiring!
+              We&apos;re hiring!
             </div>
 
             <h1 className="text-4xl mt-6 md:text-6xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'var(--font-roboto)' }}>Be part of our mission</h1>
