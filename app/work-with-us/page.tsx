@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
-import { ArrowLeft, MapPin, Clock, DollarSign, ExternalLink, ChevronDown } from 'lucide-react';
+import { ArrowLeft, MapPin, Clock, PoundSterling, ExternalLink } from 'lucide-react';
 import { Roboto } from 'next/font/google';
 
 const roboto = Roboto({
@@ -11,7 +11,6 @@ const roboto = Roboto({
 });
 
 export default function WorkWithUsPage() {
-  const [showDetails, setShowDetails] = useState(false);
 
   return (
     <div className={`min-h-screen bg-gray-50 ${roboto.variable}`} style={{ fontFamily: 'var(--font-roboto)' }}>
@@ -41,7 +40,8 @@ export default function WorkWithUsPage() {
               We&apos;re hiring!
             </div>
 
-            <h1 className="text-4xl mt-6 md:text-6xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'var(--font-roboto)' }}>Be part of our mission</h1>
+            <h1 className="text-4xl mt-6 md:text-6xl font-medium text-gray-900 mb-3" style={{ fontFamily: 'var(--font-roboto)' }}>Work with us!</h1>
+            <h2 className="text-2xl md:text-3xl font-medium text-gray-800 mb-4" style={{ fontFamily: 'var(--font-roboto)' }}>Be part of our mission</h2>
             <p className=" -mt-2 mb-6 px-2 text-l text-gray-700 max-w-4xl leading-relaxed" style={{ fontFamily: 'var(--font-roboto)' }}>
               We&apos;re looking for passionate people to join us on our mission. We value
               flat hierarchies, clear communication, and full ownership and responsibility.
@@ -74,25 +74,18 @@ export default function WorkWithUsPage() {
                     Flexible hours
                   </div>
                   <div className="flex items-center gap-2 bg-gray-50 text-gray-700 text-sm font-medium px-4 py-2 rounded-full border border-gray-400">
-                    <DollarSign size={14} />
+                    <PoundSterling size={14} />
                     Commission + Bonus
                   </div>
                 </div>
               </div>
 
-              <button
-                onClick={() => setShowDetails(!showDetails)}
-                className="inline-flex items-center text-m font-normal gap-3 bg-brand/90 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:bg-brand hover:scale-105 active:scale-95"
-              >
-                <span>{showDetails ? 'Show Less' : 'Learn More'}</span>
-                <ChevronDown size={18} className={`transition-all duration-300 ${showDetails ? 'rotate-180' : ''}`} />
-              </button>
             </div>
 
 
 
-            {/* Expandable Detailed Job Information Section */}
-            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${showDetails ? 'max-h-[2000px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
+            {/* Detailed Job Information Section */}
+            <div className="mt-6">
               <div className="border-t pt-6">
                 {/* About Us */}
                 <div className="mb-8">

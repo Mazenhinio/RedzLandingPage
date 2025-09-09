@@ -80,7 +80,7 @@ export default function Nav() {
           }} className={`relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:transition-all after:duration-500 hover:after:w-full ${
             activeSection === 'contact-form' ? 'after:w-full after:bg-brand font-medium' : 'after:w-0 after:bg-black'
           }`}>Contact</a>
-          <Link href="/work-with-us" className="work-with-us-racetrack text-sm text-black hover:scale-105 relative z-10">
+          <Link href="/work-with-us" className="work-with-us-racetrack text-sm text-white hover:scale-105 relative z-10">
             Work with Us
           </Link>
         </div>
@@ -145,7 +145,7 @@ export default function Nav() {
                 {label}
               </a>
             ))}
-            <Link href="/work-with-us" className="work-with-us-racetrack text-sm text-black hover:scale-105 relative z-10" onClick={() => setOpen(false)}>
+            <Link href="/work-with-us" className="work-with-us-racetrack text-sm text-white hover:scale-105 relative z-10" onClick={() => setOpen(false)}>
               Work with Us
             </Link>
                          <a href="#booking" className="mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 bg-white text-black shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group" onClick={(e) => {
