@@ -89,12 +89,6 @@ export default function Hero() {
             </motion.p>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={3} variants={fadeUp} className="mt-8 flex flex-col sm:flex-row gap-3">
               <a 
-                href="/courses" 
-                className="inline-flex items-center justify-center rounded-full px-6 py-3 bg-white/20 backdrop-blur-md border border-white/30 shadow-[0_0_20px_rgba(0,0,0,0.1)] hover:bg-white/30 hover:shadow-[0_0_30px_rgba(0,0,0,0.15)] hover:scale-105 transition-all duration-300 ring-1 ring-white/20"
-              >
-                Browse courses
-              </a>
-              <a 
                 href="#booking" 
                 onClick={(e) => {
                   e.preventDefault();

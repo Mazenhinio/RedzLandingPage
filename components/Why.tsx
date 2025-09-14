@@ -32,14 +32,14 @@ export default function Why() {
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#C40F26' }}></div>
               <div>
-                <p className="text-sm font-medium">People already working full-time who want to a promotion</p>
+                <p className="text-sm font-medium">People already working full-time who want a promotion</p>
               </div>
             </div>
             
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#C40F26' }}></div>
               <div>
-                <p className="text-sm font-medium">Folks who don&apos;t get career guidance at work and want an outside voice</p>
+                <p className="text-sm font-medium">Employed people who don&apos;t get career guidance at work and want an outside voice</p>
               </div>
             </div>
             
@@ -53,7 +53,7 @@ export default function Why() {
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#C40F26' }}></div>
               <div>
-                <p className="text-sm font-medium">People who want a UK accredited qualification they can show</p>
+                <p className="text-sm font-medium">People who want a UK accredited qualification respected globally</p>
               </div>
             </div>
           </div>

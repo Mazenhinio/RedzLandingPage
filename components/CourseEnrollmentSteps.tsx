@@ -7,22 +7,22 @@ export default function CourseEnrollmentSteps() {
     {
       icon: GraduationCap,
       title: "Step 1",
-      description: "Initial assessment and career pathway consultation"
+      description: "Book appointment on calendar"
     },
     {
       icon: BookOpen,
       title: "Step 2", 
-      description: "Course selection and enrollment confirmation"
+      description: "Meeting with us"
     },
     {
       icon: Play,
       title: "Step 3",
-      description: "Begin your self-paced learning journey"
+      description: "Assessment"
     },
     {
       icon: Users,
       title: "Step 4", 
-      description: "Complete assessment and receive certification"
+      description: "Careers Advisor"
     }
   ];
 
